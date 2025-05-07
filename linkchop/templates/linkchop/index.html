@@ -24,12 +24,18 @@
 <div class="container">
     <h1 class="headline">Shorten, Share, and Track Your Links Instantly</h1>
     <p class="subheadline">Boost your online presence with concise, memorable URLs that drive clicks and monitor engagement effortlessly.</p>
-
+<form method="post">
     <div class="input-group">
-        <input type="text" placeholder="Enter your URL to shorten" class="url-input" />
-        <button class="shorten-btn">Shorten URL</button>
+        {% csrf_token %}
+        <input type="text" name="url" placeholder="Enter your URL to shorten" class="url-input" />
+        <button type="submit" class="shorten-btn">Shorten URL</button>
     </div>
+    {% if short_url %}
+    <p>Your shortened URL: <a href="{{ short_url }}" target="_blank">{{ short_url }}</a></p>
+{% endif %}
 </div>
+</form>
+
 
 <footer>
     <p>© Creator - Macduff Olusa</p>
