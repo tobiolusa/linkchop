@@ -27,7 +27,7 @@
 <form method="post">
     <div class="input-group">
         {% csrf_token %}
-        <input type="text" name="url" placeholder="Enter your URL to shorten" class="url-input" />
+        <input type="url" name="url" placeholder="Enter your URL to shorten" class="url-input" />
         <button type="submit" class="shorten-btn">Shorten URL</button>
     </div>
     {% if short_url %}
